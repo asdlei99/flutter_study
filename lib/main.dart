@@ -5,8 +5,11 @@ import 'package:flutter_study/widget/state_management/ManageYourself.dart';
 import 'package:flutter_study/widget/state_management/ParentClassPipe.dart';
 import 'package:flutter_study/widget/state_management/MixedManagement.dart';
 import 'package:flutter_study/widget/component/TextComponent.dart';
-import 'package:flutter_study/widget/component/ButtonComponent.dart'
-;
+import 'package:flutter_study/widget/component/ButtonComponent.dart';
+import 'package:flutter_study/widget/component/ImageComponent.dart';
+import 'package:flutter_study/widget/component/SwitchAndCheckBoxComponent.dart';
+import 'package:flutter_study/widget/component/TextFieldComponent.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -52,7 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
 //            ParentWidgetC(),
 //            ParentWidgetC(),
 //            TextComponent(),
-          ButtonComponent()
+//            ButtonComponent(),
+//            ImageComponent(),
+//            SwitchAndCheckBoxComponent(),
+            TextFieldComponent(),
           ],
         ),
       )

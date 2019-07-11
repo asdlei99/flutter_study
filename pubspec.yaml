@@ -31,6 +31,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - images/avatar.jpeg
 #  fonts:
 #    - family: Raleway
 #      fonts:
