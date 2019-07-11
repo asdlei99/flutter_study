@@ -9,6 +9,10 @@ import 'package:flutter_study/widget/component/ButtonComponent.dart';
 import 'package:flutter_study/widget/component/ImageComponent.dart';
 import 'package:flutter_study/widget/component/SwitchAndCheckBoxComponent.dart';
 import 'package:flutter_study/widget/component/TextFieldComponent.dart';
+import 'package:flutter_study/widget/layout/LinearLayout.dart';
+import 'package:flutter_study/widget/layout/FlexboxLayout.dart';
+import 'package:flutter_study/widget/layout/WarpFlowLayout.dart';
+import 'package:flutter_study/widget/layout/FrameLayout.dart';
 
 void main() => runApp(MyApp());
 
@@ -41,10 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
+      body:
+//      Center(
+//        child:
+//        Column(
+//          mainAxisAlignment: MainAxisAlignment.start,
+//          children: <Widget>[
 //            Echo(
 //              text: "我是StatelessWidget1",
 //              backgroundColor: Colors.green,
@@ -58,10 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
 //            ButtonComponent(),
 //            ImageComponent(),
 //            SwitchAndCheckBoxComponent(),
-            TextFieldComponent(),
-          ],
-        ),
-      )
+//            TextFieldComponent(),
+//            LinearLayout(),
+//            FlexboxLayout(),
+//            WarpFlowLayout(),
+              FrameLayout()
+//          ],
+//        ),
+//      )
     );
   }
 }
