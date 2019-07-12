@@ -23,7 +23,6 @@ color和decoration是互斥的，实际上，当指定color时，Container内会
 class ContainerContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: const EdgeInsets.only(left: 100,top: 100,right: 0, bottom: 400),
       constraints: BoxConstraints(minWidth: 200,minHeight: 200),
