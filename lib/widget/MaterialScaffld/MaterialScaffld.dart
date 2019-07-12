@@ -33,6 +33,11 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>  with SingleTickerProvide
     super.initState();
 
     _tabController = TabController(length: tabs.length, vsync: this);
+    _tabController.addListener((){
+      setState(() {
+        _selectedIndex = _tabController.index;
+      });
+    });
   }
 
 
@@ -69,29 +74,44 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>  with SingleTickerProvide
         }).toList(),
       ),
       drawer: LeftDrawer(),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text("Home"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text("Business"),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text("School"),
-          )
-        ],
-        currentIndex: _selectedIndex,
-        fixedColor: Colors.blue,
-        onTap: _onTapItem,
+      bottomNavigationBar:
+//      BottomNavigationBar(
+//        items: [
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.home),
+//            title: Text("Home"),
+//          ),
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.business),
+//            title: Text("Business"),
+//          ),
+//          BottomNavigationBarItem(
+//            icon: Icon(Icons.school),
+//            title: Text("School"),
+//          )
+//        ],
+//        currentIndex: _selectedIndex,
+//        fixedColor: Colors.blue,
+//        onTap: _onTapItem,
+//      ),
+      BottomAppBar(
+        color: Colors.white,
+        shape: CircularNotchedRectangle(),
+        child: Row(
+          children: <Widget>[
+            IconButton(icon: Icon(Icons.home),onPressed: _onHome,),
+            SizedBox(),
+            IconButton(icon: Icon(Icons.business),onPressed: _onBusiness,)
+          ],
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        ),
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: _onAdd,
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -99,10 +119,22 @@ class _ScaffoldRouteState extends State<ScaffoldRoute>  with SingleTickerProvide
   _onTapItem(int index) {
     setState(() {
       _selectedIndex = index;
+      _tabController.index = index;
     });
   }
 
-  _onAdd() {
+  _onHome() {
+    _selectedIndex = 0;
+    _tabController.index = 0;
+  }
 
+  _onAdd() {
+    _selectedIndex = 1;
+    _tabController.index = 1;
+  }
+
+  _onBusiness() {
+    _selectedIndex = 2;
+    _tabController.index = 2;
   }
 }
